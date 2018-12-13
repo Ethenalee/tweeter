@@ -9,6 +9,7 @@
   padding-right: 2em;
   padding-bottom: 0;
   padding-top: 0;
+  z-index: 1;
 }
 
 #nav-bar .logo {
@@ -22,4 +23,22 @@
   margin-left: 10px;
   font-size: 200%;
   line-height: 80px;
+}
+
+#nav-bar .composebutton {
+  float: right;
+  width: 100px;
+  height: 60px;
+  margin: 10px;
+  border: 1px solid green;
+  border-radius: 10px;
+  background-color: #e8fdff;
+  color: #00a087;
+}
+
+#nav-bar .composebutton:hover {
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+  cursor: pointer;
 }

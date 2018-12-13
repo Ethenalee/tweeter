@@ -18,7 +18,6 @@
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
 
-
     <!-- Counter JS -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
@@ -33,11 +32,13 @@
     <nav id="nav-bar">
       <img class="logo" src="/images/Twitter_bird_icon copy.png">
       <span class="header">Tweeter</span>
+      <input class="composebutton" type="submit" value="Compose">
     </nav>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
+        <h3 class="Err"></h3>
         <h2>Compose Tweet</h2>
           <form method="POST" action="/tweets">
             <textarea name="text" placeholder="What are you humming about?"></textarea>
@@ -59,12 +60,13 @@
           <img class="icon" src="/images/like.png">
           <img class="icon" src="/images/repost.png">
         </footer>
-        </article>
- -->
+        </article> -->
+
       </section>
     </main>
 
   </body>
   <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
+
 </html>

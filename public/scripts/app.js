@@ -4,55 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const Data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": {
-        "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-        "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-        "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
-      },
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": {
-        "small":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
-        "regular": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png",
-        "large":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
-      },
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  },
-  {
-    "user": {
-      "name": "Johann von Goethe",
-      "avatars": {
-        "small":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png",
-        "regular": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png",
-        "large":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png"
-      },
-      "handle": "@johann49"
-    },
-    "content": {
-      "text": "Es ist nichts schrecklicher als eine tätige Unwissenheit."
-    },
-    "created_at": 1461113796368
-  }
-];
-
-
-
+//Create TweeElement form
 function createTweetElement(tweetData) {
   const element = `
       <article>
@@ -61,7 +13,7 @@ function createTweetElement(tweetData) {
             <h1 class="username">${tweetData.user.name}</h1>
             <h3 class="userid">${tweetData.user.handle}</h3>
           </header>
-          <p>${tweetData.content.text}</p>
+          <p>${escape(tweetData.content.text)};
           <footer>
           <time>${moment(tweetData.created_at).startOf('day').fromNow()}</time>
           <img class="icon" src="/images/flag.png">
@@ -70,13 +22,67 @@ function createTweetElement(tweetData) {
         </footer>
         </article>
   `
-  $('#tweets-container').append(element);
+  $('#tweets-container').prepend(element);
 }
 
+//To get test as text not jquery
+function escape(str) {
+  var div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
 
+//To add tweets
 function renderTweets(tweets) {
   tweets.forEach(function(data) {
     createTweetElement(data);
   })
 }
-renderTweets(Data);
+
+//when submit tweet what happened
+$( document ).ready(function() {
+  var $form = $("form");
+  $form.on("submit", function (event){
+  event.preventDefault();
+  if( $('textarea').val().length === 0) {
+    $(".Err").html("No content to submit!")
+  } if (140 - $('textarea').val().length < 0) {
+    $(".Err").html("Content Too long !")
+  }
+    else {
+      $.ajax({
+        url: '/tweets',
+        method: "POST",
+        data: $(this).serialize(),
+        success: function(data) {
+          console.log('done');
+          $("#tweets-container").empty();
+          loadTweets()
+          $('textarea').val('')
+          $(".Err").html("")
+          $('.counter').val('140');
+        }
+      });
+    }
+  })
+//what happen when submit compose
+$(".composebutton").click( function(){
+  $(".Err").html("")
+  $(".new-tweet").slideToggle("slow")
+  if($(".new-tweet").is(":visible")) {
+    $( "textarea" ).focus();
+  }
+  })
+})
+
+//load from tweet page
+function loadTweets() {
+  $.ajax({
+    url: '/tweets',
+    method: "GET",
+    data: $(this),
+    success: function(data) {
+      renderTweets(data)
+    }
+})
+}
