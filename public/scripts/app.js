@@ -16,9 +16,9 @@ function createTweetElement(tweetData) {
           <p>${escape(tweetData.content.text)}</p>
           <footer>
           <time>${moment(tweetData.created_at).startOf('day').fromNow()}</time>
-          <img class="icon" src="/images/flag.png">
-          <img class="icon" src="/images/like.png">
-          <img class="icon" src="/images/repost.png">
+          <input type="image" alt="Submit" id="flag" class="icon" src="/images/flag.png">
+          <input type="image" alt="Submit" class="icon" src="/images/like.png">
+          <input type="image" alt="Submit" id="repost" class="icon" src="/images/repost.png">
         </footer>
         </article>
   `
@@ -37,6 +37,19 @@ function renderTweets(tweets) {
   tweets.forEach(function(data) {
     createTweetElement(data);
   })
+}
+
+loadTweets();
+//load from tweet page
+function loadTweets() {
+  $.ajax({
+    url: '/tweets',
+    method: "GET",
+    data: $(this),
+    success: function(data) {
+      renderTweets(data)
+    }
+})
 }
 
 //when submit tweet what happened
@@ -74,17 +87,10 @@ $(".composebutton").click( function(){
     $( "textarea" ).focus();
   }
   })
+
+$("#like").click( function(){
+
+  })
+
 })
 
-loadTweets();
-//load from tweet page
-function loadTweets() {
-  $.ajax({
-    url: '/tweets',
-    method: "GET",
-    data: $(this),
-    success: function(data) {
-      renderTweets(data)
-    }
-})
-}

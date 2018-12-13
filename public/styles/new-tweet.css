@@ -138,6 +138,18 @@ section textarea {
   float: right;
   margin: 10px 10px 10px 0px;
   display: none;
+  color: black;
+}
+
+#tweets-container article footer #number {
+  float: right;
+  color: black;
+}
+
+#tweets-container article footer #like {
+  float: right;
+  margin: 10px 10px 10px 10px;
+  color: black;
 }
 
 #tweets-container article:hover .icon {
