@@ -5,7 +5,7 @@
 module.exports = function makeDataHelpers(db) {
   return {
 
-    // Saves a tweet to `db`
+    // Saves a tweet to `Mongo db`
     saveTweet: function(newTweet, callback) {
 
         db.collection("tweets").insertOne(newTweet, (err, result) => {
@@ -16,7 +16,7 @@ module.exports = function makeDataHelpers(db) {
       });
     },
 
-    // Get all tweets in `db`, sorted by newest first
+    // Get tweets from Mongo DB
     getTweets: function(callback) {
       db.collection("tweets").find().toArray((err, tweets) => {
         if(err) {

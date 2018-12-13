@@ -41,6 +41,7 @@ function renderTweets(tweets) {
 
 //when submit tweet what happened
 $( document ).ready(function() {
+  $(".new-tweet").hide();
   var $form = $("form");
   $form.on("submit", function (event){
   event.preventDefault();

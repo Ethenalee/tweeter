@@ -10,6 +10,9 @@
   padding-bottom: 0;
   padding-top: 0;
   z-index: 1;
+  font-weight: bold;
+  background-image: url(/images/dot.png);
+  background-size: 25px 25px;
 }
 
 #nav-bar .logo {
@@ -27,6 +30,8 @@
 
 #nav-bar .composebutton {
   float: right;
+  font-weight: bold;
+  text-align: right;
   width: 100px;
   height: 60px;
   margin: 10px;
@@ -34,6 +39,10 @@
   border-radius: 10px;
   background-color: #e8fdff;
   color: #00a087;
+  background-image: url(/images/writting2.png);
+  background-position: 5px;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
 }
 
 #nav-bar .composebutton:hover {
@@ -41,4 +50,8 @@
   background-color: white;
   color: black;
   cursor: pointer;
+  background-image: url(/images/writting.png);
+  background-position: 5px;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
 }

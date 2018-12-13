@@ -1,10 +1,11 @@
 .new-tweet {
   border-radius: 15px;
-  background-color: lightgrey;
+  background-color: #E5E8E8;
   padding-bottom: 40px;
   color: 030;
   margin-bottom: 20px;
   height: 200px;
+  border: 1px solid #ABB2B9;
 }
 
 .container {
@@ -35,13 +36,26 @@ section textarea {
   width: 350px;
 }
 
-.tweetbutton {
+
+.tweetbutton[value] {
+  font-weight: bold;
+  color: #283747;
   float: left;
-  margin-left: 20px
+  border: 0.5px solid #283747;
+  border-radius: 5px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.tweetbutton[value]:hover {
+  cursor: pointer;
+  color: #2980B9;
+  border: 0.5px solid #2980B9;
 }
 
 .counter {
   float: right;
+  margin-top: 10px;
   margin-right: 20px;
   width: 30px;
   background: transparent;
@@ -54,7 +68,7 @@ section textarea {
 
 #tweets-container article{
   border-radius: 15px;
-  border: 1px solid grey;
+  border: 1px solid #D5D8DC;
   background-color: white;
   color: 030;
   text-align: left;
@@ -81,14 +95,16 @@ section textarea {
   display: inline-block;
   float: left;
   margin: 10px;
-  font-size: 25px;
+  font-size: 20px;
 
 }
 
 #tweets-container article header .userid {
   display: inline-block;
   float: right;
-  margin: 10px;
+  font-size: 15px;
+  margin-top: 15px;
+  margin-right: 10px;
 }
 
 #tweets-container article header .avatar {
