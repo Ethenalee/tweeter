@@ -13,7 +13,7 @@ function createTweetElement(tweetData) {
             <h1 class="username">${tweetData.user.name}</h1>
             <h3 class="userid">${tweetData.user.handle}</h3>
           </header>
-          <p>${escape(tweetData.content.text)};
+          <p>${escape(tweetData.content.text)}</p>
           <footer>
           <time>${moment(tweetData.created_at).startOf('day').fromNow()}</time>
           <img class="icon" src="/images/flag.png">
@@ -75,6 +75,7 @@ $(".composebutton").click( function(){
   })
 })
 
+loadTweets();
 //load from tweet page
 function loadTweets() {
   $.ajax({
