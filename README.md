@@ -1,5 +1,7 @@
 # Tweeter Project
 
+!["The page loaded"](https://github.com/Ethenalee/tweeter/blob/master/screenshot/Screen.png?raw=true)
+!["The page compose "](https://github.com/Ethenalee/tweeter/blob/master/screenshot/Screen1.png?raw=true)
 
 ## Getting Started
 
