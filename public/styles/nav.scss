@@ -12,17 +12,19 @@
   z-index: 1;
   font-weight: bold;
   background-image: url(/images/dot.png);
-  background-size: 25px 25px; }
-  #nav-bar .logo {
+  background-size: 25px 25px;
+  .logo {
     float: left;
     width: 80px;
-    height: 80px; }
-  #nav-bar .header {
+    height: 80px;
+  }
+  .header {
     float: left;
     margin-left: 10px;
     font-size: 200%;
-    line-height: 80px; }
-  #nav-bar .composebutton {
+    line-height: 80px;
+  }
+  .composebutton {
     float: right;
     font-weight: bold;
     text-align: right;
@@ -36,8 +38,8 @@
     background-image: url(/images/writting2.png);
     background-position: 5px;
     background-size: 20px 20px;
-    background-repeat: no-repeat; }
-    #nav-bar .composebutton:hover {
+    background-repeat: no-repeat;
+    &:hover {
       border: 1px solid black;
       background-color: white;
       color: black;
@@ -45,6 +47,7 @@
       background-image: url(/images/writting.png);
       background-position: 5px;
       background-size: 20px 20px;
-      background-repeat: no-repeat; }
-
-/*# sourceMappingURL=nav2.css.map */
+      background-repeat: no-repeat;
+    }
+  }
+}

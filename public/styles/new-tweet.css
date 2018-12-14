@@ -5,37 +5,28 @@
   color: 030;
   margin-bottom: 20px;
   height: 200px;
-  border: 1px solid #ABB2B9;
-}
+  border: 1px solid #ABB2B9; }
 
 .container {
-  padding: 2em;
-}
-
+  padding: 2em; }
 
 section h2 {
   text-align: left;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 20px;
-  margin: 0;
-}
-
-section h2:after{
-  display: inline-block;
-  position: relative;
-  content: "";
-  border-bottom: .1rem solid black;
-  width: 100%;
-  transform: translateY(-15px);
-}
-
+  margin: 0; }
+  section h2:after {
+    display: inline-block;
+    position: relative;
+    content: "";
+    border-bottom: .1rem solid black;
+    width: 100%;
+    transform: translateY(-15px); }
 section textarea {
   margin: 0 auto;
   padding: 10px;
-  width: 350px;
-}
-
+  width: 350px; }
 
 .tweetbutton[value] {
   font-weight: bold;
@@ -44,14 +35,11 @@ section textarea {
   border: 0.5px solid #283747;
   border-radius: 5px;
   margin-left: 20px;
-  margin-top: 10px;
-}
-
-.tweetbutton[value]:hover {
-  cursor: pointer;
-  color: #2980B9;
-  border: 0.5px solid #2980B9;
-}
+  margin-top: 10px; }
+  .tweetbutton[value]:hover {
+    cursor: pointer;
+    color: #2980B9;
+    border: 0.5px solid #2980B9; }
 
 .counter {
   float: right;
@@ -59,102 +47,70 @@ section textarea {
   margin-right: 20px;
   width: 30px;
   background: transparent;
-  border: transparent;
-}
+  border: transparent; }
 
 .charcount {
-  color: red;
-}
+  color: red; }
 
-#tweets-container article{
+#tweets-container article {
   border-radius: 15px;
   border: 1px solid #D5D8DC;
   background-color: white;
   color: 030;
   text-align: left;
   margin-bottom: 20px;
-  width: 386px;
-}
-
-#tweets-container article p {
-  margin-left: 10px;
-}
-
-
-#tweets-container article header {
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  background-color: #eee;
-  width: 100%;
-  height: 50px;
-  color: 030;
-  opacity: 0.5;
-}
-
-#tweets-container article header .username{
-  display: inline-block;
-  float: left;
-  margin: 10px;
-  font-size: 20px;
-
-}
-
-#tweets-container article header .userid {
-  display: inline-block;
-  float: right;
-  font-size: 15px;
-  margin-top: 15px;
-  margin-right: 10px;
-}
-
-#tweets-container article header .avatar {
-  width: 40px;
-  height: 40px;
-  margin: 5px;
-  float: left;
-}
-
-#tweets-container article footer {
-  height: 30px;
-}
-
-#tweets-container article time {
-  float: left;
-  margin: 10px;
-  font-size: 10%;
-}
-
-
-#tweets-container article:hover header{
-  opacity: 1.0;
-}
-
-#tweets-container article:hover{
-  border: 1px solid black;
-}
-
-#tweets-container article footer .icon {
-  width: 15px;
-  float: right;
-  margin: 10px 10px 10px 0px;
-  display: none;
-  color: black;
-}
-
-#tweets-container article footer #number {
-  float: right;
-  color: black;
-}
-
-#tweets-container article footer #like {
-  float: right;
-  margin: 10px 10px 10px 10px;
-  color: black;
-}
-
-#tweets-container article:hover .icon {
-  display: inline-block;
-}
+  width: 386px; }
+  #tweets-container article p {
+    margin-left: 10px; }
+  #tweets-container article header {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: #eee;
+    width: 100%;
+    height: 50px;
+    color: 030;
+    opacity: 0.5; }
+    #tweets-container article header .username {
+      display: inline-block;
+      float: left;
+      margin: 10px;
+      font-size: 20px; }
+    #tweets-container article header .userid {
+      display: inline-block;
+      float: right;
+      font-size: 15px;
+      margin-top: 15px;
+      margin-right: 10px; }
+    #tweets-container article header .avatar {
+      width: 40px;
+      height: 40px;
+      margin: 5px;
+      float: left; }
+  #tweets-container article footer {
+    height: 30px; }
+  #tweets-container article time {
+    float: left;
+    margin: 10px;
+    font-size: 10%; }
+  #tweets-container article:hover {
+    border: 1px solid black; }
+    #tweets-container article:hover header {
+      opacity: 1.0; }
+  #tweets-container article footer .icon {
+    width: 15px;
+    float: right;
+    margin: 10px 10px 10px 0px;
+    display: none;
+    color: black; }
+  #tweets-container article footer #number {
+    float: right;
+    color: black; }
+  #tweets-container article footer #like {
+    float: right;
+    margin: 10px 10px 10px 10px;
+    color: black; }
+  #tweets-container article:hover .icon {
+    display: inline-block; }
 
 .new-tweet .Err {
   border-top-left-radius: 15px;
@@ -166,5 +122,6 @@ section textarea {
   position: absolute;
   margin-top: -5px;
   width: 386px;
-  z-index: 9;
-}
+  z-index: 9; }
+
+/*# sourceMappingURL=new-tweet.css.map */

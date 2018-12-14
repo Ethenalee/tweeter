@@ -1,0 +1,153 @@
+.new-tweet {
+  border-radius: 15px;
+  background-color: #E5E8E8;
+  padding-bottom: 40px;
+  color: 030;
+  margin-bottom: 20px;
+  height: 200px;
+  border: 1px solid #ABB2B9;
+}
+
+.container {
+  padding: 2em;
+}
+
+section {
+  h2 {
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+    margin: 0;
+    &:after {
+      display: inline-block;
+      position: relative;
+      content: "";
+      border-bottom: .1rem solid black;
+      width: 100%;
+      transform: translateY(-15px);
+    }
+  }
+  textarea {
+    margin: 0 auto;
+    padding: 10px;
+    width: 350px;
+  }
+}
+
+.tweetbutton[value] {
+  font-weight: bold;
+  color: #283747;
+  float: left;
+  border: 0.5px solid #283747;
+  border-radius: 5px;
+  margin-left: 20px;
+  margin-top: 10px;
+  &:hover {
+    cursor: pointer;
+    color: #2980B9;
+    border: 0.5px solid #2980B9;
+  }
+}
+
+.counter {
+  float: right;
+  margin-top: 10px;
+  margin-right: 20px;
+  width: 30px;
+  background: transparent;
+  border: transparent;
+}
+
+.charcount {
+  color: red;
+}
+
+#tweets-container article {
+  border-radius: 15px;
+  border: 1px solid #D5D8DC;
+  background-color: white;
+  color: 030;
+  text-align: left;
+  margin-bottom: 20px;
+  width: 386px;
+  p {
+    margin-left: 10px;
+  }
+  header {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: #eee;
+    width: 100%;
+    height: 50px;
+    color: 030;
+    opacity: 0.5;
+    .username {
+      display: inline-block;
+      float: left;
+      margin: 10px;
+      font-size: 20px;
+    }
+    .userid {
+      display: inline-block;
+      float: right;
+      font-size: 15px;
+      margin-top: 15px;
+      margin-right: 10px;
+    }
+    .avatar {
+      width: 40px;
+      height: 40px;
+      margin: 5px;
+      float: left;
+    }
+  }
+  footer {
+    height: 30px;
+  }
+  time {
+    float: left;
+    margin: 10px;
+    font-size: 10%;
+  }
+  &:hover {
+    header {
+      opacity: 1.0;
+    }
+    border: 1px solid black;
+  }
+  footer {
+    .icon {
+      width: 15px;
+      float: right;
+      margin: 10px 10px 10px 0px;
+      display: none;
+      color: black;
+    }
+    #number {
+      float: right;
+      color: black;
+    }
+    #like {
+      float: right;
+      margin: 10px 10px 10px 10px;
+      color: black;
+    }
+  }
+  &:hover .icon {
+    display: inline-block;
+  }
+}
+
+.new-tweet .Err {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  color: red;
+  background: #FFB6C1;
+  text-align: left;
+  padding-left: 10px;
+  position: absolute;
+  margin-top: -5px;
+  width: 386px;
+  z-index: 9;
+}
