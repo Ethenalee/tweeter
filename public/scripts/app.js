@@ -6,8 +6,9 @@
 
 //Create TweeElement form
 function createTweetElement(tweetData) {
+
   const element = `
-      <article>
+      <article class="eachtweet" data-id=${tweetData.user.name} data-tweetid=${tweetData._id}>
           <header>
             <img class="avatar" src="${tweetData.user.avatars.small}">
             <h1 class="username">${tweetData.user.name}</h1>
@@ -16,9 +17,10 @@ function createTweetElement(tweetData) {
           <p>${escape(tweetData.content.text)}</p>
           <footer>
           <time>${moment(tweetData.created_at).startOf('day').fromNow()}</time>
-          <input type="image" alt="Submit" id="flag" class="icon" src="/images/flag.png">
-          <input type="image" alt="Submit" class="icon" src="/images/like.png">
-          <input type="image" alt="Submit" id="repost" class="icon" src="/images/repost.png">
+          <h3 class="likes">${tweetData.like ? 1 : 0}</h3><h3 class="likeword">likes: </h3>
+          <img type="image" alt="Submit" class="icon flag" src="/images/flag.png">
+          <img type="image" alt="Submit" class="icon like" src="/images/like.png">
+          <img type="image" alt="Submit" class="icon repost" src="/images/repost.png">
         </footer>
         </article>
   `
@@ -27,7 +29,7 @@ function createTweetElement(tweetData) {
 
 //To get test as text not jquery
 function escape(str) {
-  var div = document.createElement('div');
+  const div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 }
@@ -88,9 +90,48 @@ $(".composebutton").click( function(){
   }
   })
 
-$("#like").click( function(){
+// $(document).on('click', '.like', function(e) {
+//   let likes = $('.likes', this.parentElement);
+//   let count = parseInt(likes.text());
 
-  })
+//     if(likes.hasClass('clicked') === true) {
+//       likes.text(count - 1);
+//       likes.removeClass('clicked');
+//     } else {
+//       likes.text(count + 1);
+//       likes.addClass('clicked');
+//     }
 
+// })
+
+$(document).on('click', '.like', function(e) {
+        var $target = $(this).parent().parent();
+        var tweetid = $target.attr('data-tweetid');
+        $.ajax({
+        url: '/tweets/like/' + tweetid,
+        method: "POST",
+
+        success: function(data) {
+          let likes = $(e.target).siblings('.likes');
+
+          if(likes.hasClass('clicked') === true) {
+            if(likes.text() == 0) {
+              likes.text(1);
+            } else {
+              likes.text(0);
+            }
+            likes.removeClass('clicked');
+          }
+          else {
+              if(likes.text() == 0) {
+               likes.text(1);
+              } else {
+                likes.text(0);
+              }
+              likes.addClass('clicked');
+            }
+         }
+
+      });
 })
-
+})

@@ -87,7 +87,7 @@ section textarea {
       margin: 5px;
       float: left; }
   #tweets-container article footer {
-    height: 30px; }
+    height: 40px; }
   #tweets-container article time {
     float: left;
     margin: 10px;
@@ -97,20 +97,32 @@ section textarea {
     #tweets-container article:hover header {
       opacity: 1.0; }
   #tweets-container article footer .icon {
-    width: 15px;
+    width: 20px;
     float: right;
-    margin: 10px 10px 10px 0px;
+    margin: 5px;
     display: none;
-    color: black; }
+    color: black;
+    transform: translateY(10px); }
   #tweets-container article footer #number {
     float: right;
     color: black; }
-  #tweets-container article footer #like {
-    float: right;
-    margin: 10px 10px 10px 10px;
-    color: black; }
+
   #tweets-container article:hover .icon {
-    display: inline-block; }
+    display: inline-block;
+    cursor: pointer;}
+    #tweets-container article footer .likes {
+    float: right;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-size: 15px }
+    #tweets-container article footer .likeword {
+    float: right;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-size: 15px }
+
 
 .new-tweet .Err {
   border-top-left-radius: 15px;

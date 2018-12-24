@@ -7,6 +7,28 @@ const tweetsRoutes  = express.Router();
 
 module.exports = function(DataHelpers) {
 
+  tweetsRoutes.post("/like/:id", function(req, res) {
+    let tweetid = req.params.id;
+    DataHelpers.likeIt(tweetid, (err, tweet) => {
+      if (err) {
+        res.status(500).json({ error: err.message });
+      } else {
+        res.status(201).send(tweet);
+      }
+
+    })
+  })
+
+  tweetsRoutes.get("/like/:id", (req, res) => {
+    DataHelpers.getLike((err, tweets) => {
+      if (err) {
+        res.status(500).json({ error: err.message });
+      } else {
+        res.json(tweets.like);
+      }
+    });
+  })
+
   tweetsRoutes.get("/", function(req, res) {
     DataHelpers.getTweets((err, tweets) => {
       if (err) {
@@ -29,7 +51,8 @@ module.exports = function(DataHelpers) {
       content: {
         text: req.body.text
       },
-      created_at: Date.now()
+      created_at: Date.now(),
+      like: 0
     };
 
     DataHelpers.saveTweet(tweet, (err) => {
@@ -40,6 +63,10 @@ module.exports = function(DataHelpers) {
       }
     });
   });
+
+
+
+
 
   return tweetsRoutes;
 
